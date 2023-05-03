@@ -101,6 +101,8 @@ public class LesBonsConteneurs extends Application {
 
         // Ajout liste boutons/formulaire
         HBox centre = new HBox();
+        centre.setMinHeight(230);
+        centre.setMinWidth(350);
         centre.setPrefHeight(3000);
         centre.setMaxHeight(Double.MAX_VALUE);
         centre.getChildren().addAll(buttons, new Separator(Orientation.VERTICAL), form);
@@ -122,8 +124,8 @@ public class LesBonsConteneurs extends Application {
 
         // Ajout de la scene à la fenêtre et changement de ses paramètres (dimensions et titre)
         primaryStage.setScene( scene );
-        primaryStage.setMinWidth(200);
-        primaryStage.setMinHeight(300);
+        primaryStage.setMinWidth(centre.getMinWidth());
+        primaryStage.setMinHeight(centre.getMinHeight() + 100);
         primaryStage.setWidth( 800 );
         primaryStage.setHeight( 600 );
         primaryStage.setTitle("Premier Exemple manipulant les conteneurs");
