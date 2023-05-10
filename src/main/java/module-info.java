@@ -8,4 +8,5 @@ module com.example.javafxdemo {
     opens com.example.javafxdemo to javafx.fxml;
     exports com.example.javafxdemo;
     exports com.example.partie1;
+    exports com.example.partie2;
 }
