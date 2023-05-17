@@ -27,7 +27,7 @@ public class Pendu extends Application {
     public void start(Stage primaryStage) {
         BorderPane borderPane = new BorderPane();
         // ajout d'un fond bleu clair
-        borderPane.setStyle("-fx-background-color: #cce6ff;");
+        borderPane.setStyle("-fx-background-color: #bcf6e2;");
 
         // Creation du centre de la page
         VBox center = new VBox();
@@ -56,12 +56,15 @@ public class Pendu extends Application {
             Button button = new Button(Character.toString(ALPHABET.charAt(i)));
             button.setOnAction(actionEvent -> appuieLettre(actionEvent));
             if (i < 6) {
+                button.setStyle("-fx-background-color: #bcf6e2; -fx-border-color: #ff8a37; -fx-border-radius: 5px; -fx-background-radius: 5px; -fx-text-fill: #4da888; -fx-font-size: 14px;");
                 gridPane.add(button, i+2, 0);
             }
             else if (i >= 6 && i < 16) {
+                button.setStyle("-fx-background-color: #bcf6e2; -fx-border-color: #ff8a37; -fx-border-radius: 5px; -fx-background-radius: 5px; -fx-text-fill: #4da888; -fx-font-size: 14px;");
                 gridPane.add(button, (i-6)%10, 1);
             }
             else {
+                button.setStyle("-fx-background-color: #bcf6e2; -fx-border-color: #ff8a37; -fx-border-radius: 5px; -fx-background-radius: 5px; -fx-font-size: 14px; -fx-text-fill: #4da888;");
                 gridPane.add(button, (i-6)%10, 2);
             }
         }
@@ -70,6 +73,7 @@ public class Pendu extends Application {
         HBox bottom = new HBox();
         bottom.setAlignment(Pos.CENTER);
         Button rejouer = new Button("Rejouer");
+        rejouer.setStyle("-fx-background-color: #bcf6e2; -fx-border-color: #ff8a37; -fx-border-radius: 5px; -fx-background-radius: 5px; -fx-font-size: 14px; -fx-text-fill: #4da888;");
         rejouer.setOnAction(actionEvent -> appuieRejouer(actionEvent, gridPane));
         bottom.getChildren().add(rejouer);
 

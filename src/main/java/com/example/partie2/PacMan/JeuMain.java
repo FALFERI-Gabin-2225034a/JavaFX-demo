@@ -1,6 +1,5 @@
 package com.example.partie2.PacMan;
 
-import com.sun.glass.ui.Timer;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
