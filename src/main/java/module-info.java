@@ -13,4 +13,6 @@ module com.example.javafxdemo {
     exports com.example.partie2.Pendu;
     exports com.example.partie3;
     opens com.example.partie3;
+    exports com.example.exercice7;
+    opens com.example.exercice7;
 }
