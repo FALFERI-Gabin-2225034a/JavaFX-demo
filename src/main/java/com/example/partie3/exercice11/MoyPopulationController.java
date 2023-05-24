@@ -11,6 +11,7 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -36,8 +37,6 @@ public class MoyPopulationController implements Initializable {
     private NumberAxis yAxis;
 
     private ObservableList<XYChart.Data<String, Number>> data = FXCollections.observableArrayList();
-    private ArrayList<HBox> hBoxes = new ArrayList<>();
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         barChart.getXAxis().setLabel("Date");
@@ -64,7 +63,6 @@ public class MoyPopulationController implements Initializable {
         HBox hBox = new HBox(vBox, textField);
         hBox.setSpacing(10);
 
-        hBoxes.add(hBox);
         inputContainer.getChildren().add(hBox);
     }
 
@@ -82,7 +80,14 @@ public class MoyPopulationController implements Initializable {
             else
                 data.get(id).setYValue(population);
         } catch (NumberFormatException e) {
-            // Gérer une erreur de format incorrect pour la population
+            showErrorPopup("Erreur de format", "La population doit être un nombre entier.");
         }
+    }
+    private void showErrorPopup(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur");
+        alert.setHeaderText(title);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 }
